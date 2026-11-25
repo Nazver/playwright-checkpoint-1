@@ -4,23 +4,18 @@ export class CatalogPage {
   }
 
   async search(query) {
-    // BEGIN
-    // END
+    await this.page.getByPlaceholder('Search').fill(query);
   }
 
   async selectBrand(brand) {
-    // BEGIN
-    // END
+    await this.page.getByRole('checkbox', { name: brand, exact: true }).check();
   }
 
   async openProduct(name) {
-    // BEGIN
-    // END
+    await this.page.getByRole('heading', { name, exact: true }).click();
   }
 
   async nextPage() {
-    // BEGIN
-    // END
+    await this.page.getByRole('link', { name: 'Next' }).first().click();
   }
 }
-
